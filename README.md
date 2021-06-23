@@ -1,5 +1,12 @@
 
+<p align="left">
+<a href="#logo" name="logo"><img src="https://raw.githubusercontent.com/bionanoimaging/UC2-GIT/master/IMAGES/UC2_logo_text.png" width="400"></a>
+</p>
+
 # openUC2 MicronStage
+---
+
+
 
 This repository will help you to set up a very simple yet powerful xy-stage for your UC2-based microscope experiments, where manipulating the region of interest (ROI) in X/Y at a micrometer level using NEMA stepper motors becomes important.
 
@@ -149,7 +156,7 @@ From the website the following information are available:
 
 This is used in the current version of the setup
 
-|  Type | Details  |  Price | Link  |s
+|  Type | Details  |  Price | Link  |
 |---|---|---|---|
 | MKS DLC CNC  (NEMA Motors) | Controller Electronics for NEMA motors and Laser |  25 € | [Roboter-Baukasten](https://www.roboter-bausatz.de/p/mks-dlc-cnc-lasergravierer-mainboard-grbl)  |
 | M3, M4 Screws | Screw Set |  12 € | [Ebay](https://www.ebay.de/itm/Schrauben-Set-520tlg-Edelstahl-Schrauben-Muttern-M3-M4-M5-Linsenkopfschrauben/383726480774?_trkparms=ispr%3D1&hash=item5957e16d86:g:G5sAAOSwVFpfZIpI&amdata=enc%3AAQAFAAACcBaobrjLl8XobRIiIML1V4Imu%252Fn%252BzU5L90Z278x5ickkxFtV7J5P58ubuVigtBH%252Fe6pb1LxAKCnCULXdvRrl4LVsR3MjfE7wqRxrrBJlBysxXCQuNVptPKS9BmNaHKDLIeQv9NKj6IvrJW%252FufTTddFXGF8U%252BnasvpahEx2Fwxrry8XZyS4eQQvsN4mA59aRp9J7k6D4K06%252FFcobu4rHnfQ1VDPT8wflsYId3xtETX7pohjCj3dUHx%252B2xdTjlELu04rULIiL6TUEAeM14OltNcoB1t2%252Fh8V8LKjZEnZdlr%252F%252FRXMuJEQYYDBP%252BBnRL5njzYMyjhWI4zWNk15%252BO1Dp35UhzgbADwjZ0qAo99s3c3Ti6IYmF969jgsb%252BGsP1O7z0Hr%252BpldAp1SHfquGj6eFoy%252FGQNJEId0Py85H1LaFn6Hyci2zHqyBgOacd3mquWr7LNT%252F%252FwpC%252FdQKhGyC2IC0Em1d%252BmmZ6ooQu3vmdiJsgBl3Xo3aLS%252BgW8Wt9gV9q8CMkm20NLpQ6jZyrsf%252FIuilQiHFyzw1J4VLI9n0%252BL6%252FBAH3YJmF%252B73OfglDgtfXR6JsIfmQWs%252FZHZiL3amLq0SmiL8EMrSxXt%252BIJ%252BiGbRoPXdxz3szICKQI4q9q%252FD722ZzcNie8%252FzhMVivT30E1KgYJfz%252FAfU7gvNCXLVDGSFbcWoPzhKkeHwScOm%252BdH7lynZeiltxRDBO87crSnuH9QoeU7MYThFdOChZ32I32GDoDan46MhW38X80oeXGp6BhDrkOgATOEQNgh3vOFRSl5P2ew7vYL%252Bv4da0aJy2ThL5WfIGHbt9qjkwQjEBY4JexecOA7qQ%253D%253D%7Ccksum%3A38372648077480f9cf3eb2fe485292adf88c008d37c8%7Campid%3APL_CLK%7Cclp%3A2334524)  |
