@@ -2,11 +2,7 @@ import serial
 import time
 import re
 import numpy as np
-try:
-    import pandas as pd
-except:
-    print("no pandas installed..")
-    
+
 class GrblDriver:
     """Class for interfacing with GRBL loaded on an Arduino Uno.Arduino
 
@@ -67,6 +63,7 @@ class GrblDriver:
         self.led_state = 0
         self.positions = (0,0,0)
         self.stepdivider = 1000
+        self.speed = 10000
 
         #initialize and wait for grbl to wake up
         self._write('\r\n\r\n')
@@ -261,7 +258,8 @@ class GrblDriver:
         """Move axis with optional blocking"""
         pos = steps/self.stepdivider
         self._write('G90')
-        self._write('G0 '+axis+str(pos))
+        self._write('G0 '+axis+str(pos)+"F"+str(self.speed))
+        
         if blocking:
             time.sleep(self.waittimeout)
             while True:
@@ -284,20 +282,20 @@ class GrblDriver:
                 self._write('G0 X'+str(ix)+'Y'+str(iy))
                 self._write('G2 X'+str(ix)+'Y'+str(iy)+ ' I1 J'+str(radius))
             else:
-                self.move_abs((position_now[0]-d_shift,position_now[1],position_now[2]), wait_until_done = False, pingwait = 0.1)
-                self.move_abs((position_now[0]-d_shift,position_now[1]-d_shift,position_now[2]), wait_until_done = False, pingwait = 0.1)
-                self.move_abs((position_now[0]-d_shift,position_now[1]-d_shift,position_now[2]), wait_until_done = False, pingwait = 0.1)
-                self.move_abs((position_now[0],position_now[1],position_now[2]), wait_until_done = False, pingwait = 0.1)
+                self.move_abs((position_now[0]-d_shift,position_now[1],position_now[2]), blocking = False, pingwait = 0.1)
+                self.move_abs((position_now[0]-d_shift,position_now[1]-d_shift,position_now[2]), blocking = False, pingwait = 0.1)
+                self.move_abs((position_now[0]-d_shift,position_now[1]-d_shift,position_now[2]), blocking = False, pingwait = 0.1)
+                self.move_abs((position_now[0],position_now[1],position_now[2]), blocking = False, pingwait = 0.1)
 
 
-    def move_rel(self, position_rel=(0,0,0), wait_until_done = True, pingwait = 0.25):
+    def move_rel(self, position_rel=(0,0,0), blocking = True, pingwait = 0.25):
         """Move axises relaitve to current position"""
-        self.move_xyz(position_rel, wait_until_done, config="rel")
+        self.move_xyz(position_rel, blocking, config="rel")
         
 
-    def move_abs(self, position_rel=(0,0,0), wait_until_done = True, pingwait = 0.25):
+    def move_abs(self, position_rel=(0,0,0), blocking = True, pingwait = 0.25):
         """Move axises absolute"""
-        self.move_xyz(position_rel, wait_until_done, config="abs")
+        self.move_xyz(position_rel, blocking, config="abs")
         
         
     def move_xyz(self, position=(0,0,0), blocking = True, pingwait = 0.25, config="abs"):
@@ -316,7 +314,8 @@ class GrblDriver:
         self._write('G90')
         self._write('G0 '+ 'X'+str(to_go[0]/self.stepdivider) +
                     'Y'+str(to_go[1]/self.stepdivider) +
-                    'Z'+str(to_go[2]/self.stepdivider))
+                    'Z'+str(to_go[2]/self.stepdivider) +
+                    'F'+str(self.speed))
         if blocking:
             time.sleep(self.waittimeout)
             while True:
@@ -363,8 +362,8 @@ class GrblDriver:
             
     def zhome(self, steps=20000):
         """Run the homing cycle for the z-axis"""
-        self.move_rel((0,0,steps), wait_until_done = True)
-        self.move_rel((0,0,-np.sign(steps)*100), wait_until_done = True)        
+        self.move_rel((0,0,steps), blocking = True)
+        self.move_rel((0,0,-np.sign(steps)*100), blocking = True)        
         self.positions=(self.positions[0],self.positions[1],0)
 
     def get_status_report(self):
