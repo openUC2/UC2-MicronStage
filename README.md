@@ -10,7 +10,7 @@
 
 This repository will help you to set up a very simple yet powerful xy-stage for your UC2-based microscope experiments, where manipulating the region of interest (ROI) in X/Y at a micrometer level using NEMA stepper motors becomes important.
 
-The electronics are based on the [GRBL](https://github.com/grbl/grbl)-firmware and can be controlled either through an Arduino Shield (e.g. CNC Shield v3) controlled by a Raspberry Pi/Nvidia Jetson/laptop or a dedicated CNC/3D printing electronics (e.g. MKS CLS). Curious to see what this looks like? Scroll to the very bottom of the page.
+The electronics are based on the [GRBL](https://github.com/grbl/grbl)-firmware and can be controlled either through an Arduino Shield (e.g. CNC Shield v3) controlled by a Raspberry Pi/Nvidia Jetson/laptop or a dedicated CNC/3D printing electronics (e.g. MKS CLS). Curious to see what this looks like? Keep scrolling!
 
 <p align="center">
 <a href="#logo" name="logo"><img src="./IMAGES/Assembly_XY_stage_with_motors_v3.png" width="600"></a>
@@ -21,7 +21,7 @@ This stage can be used for diffrent experiments. We have successfully used it fo
 
 Depending on the settings of the [GRBL](https://github.com/grbl/grbl)-controller you can achieve <1µm resolution with the stage! Adding an additional optical encoder by means of a camera (e.g. Raspicam) + microscope objective lens, the open-loop stage can be used as a closed-loop stage with very high precision. More about this will follow soon!
 
-The overall price is in the range of 300€.
+The overall price is in the range under 300€.
 
 
 The stage on top of a fluorescence microscope:
@@ -48,18 +48,18 @@ The stage on top of a fluorescence microscope:
 
 # Table of Content
 
-- **[Electronics](#Electronics)**
-- **[Software](#Software)**
-- **[Hardware](#Hardware)**
-- **[Bill of materials](#Results)**
-- **[Results](#Results)**
+- **[Electronics](#-electronics)**
+- **[Software](#-software)**
+- **[Hardware](#-hardware)**
+- **[Bill of materials](#-results)**
+- **[Results](#-results)**
 
 
 
 
 ## In-Action
 
-You can directly control the microscope from the opentrons Jupyter notebook. We have collected some notebooks showing its control in the folder [./JUPYTER](./JUPYTER). This way it becomes very simple to plan experiments which involve both, pipetting and imaging.
+You can directly control the microscope from the Opentrons Jupyter notebook. We have collected some notebooks showing its control in the folder [./PYTHON](./PYTHON). This way it becomes very simple to plan experiments which involve both, pipetting and imaging.
 
 <p align="center">
 <a href="#logo" name="logo"><img src="./IMAGES/StageInACtion.gif" width="600"></a>
@@ -77,11 +77,11 @@ We offer different ways to control the stage!
 **Warning:** This is still under strong development. We derived the software to control the GRBL-based XYZt stage from the [Openflexure microscope project](https://gitlab.com/beniroquai/openflexure-microscope-server) by Bowman et al.
 Instead of using a Raspberry Pi camera, we use an Nvidia Jetson Nano singleboard computer and run a customized version of the OFM server that can control the GRBL board and the monochrome CMOS camera.
 
-A detailed set of instructions for installing the Openflexure Server (OFM Server) can be found in a dedicated [README_SOFTWARE.md](README_SOFTWARE.md) (it is under construction..). In case you want a preinstalled image, please contact us!
+A detailed set of instructions for installing the Openflexure Server (OFM Server) will be found in a dedicated README_SOFTWARE.md (it is under construction...). In case you want a preinstalled image, please contact us!
 
 ## Octopi-Research
 
-We have written a small device adapter for the Ocotopi research developed for the SQUID project from the [PrakashLab](https://squid-imaging.org/7bad36b7a9b44cacb1fe1580b39e05d8).
+We have written a small device adapter for the Octopi research developed for the SQUID project from the [PrakashLab](https://squid-imaging.org/7bad36b7a9b44cacb1fe1580b39e05d8).
 Please have a look in this [repository](https://github.com/beniroquai/octopi-research)
 
 
@@ -92,7 +92,7 @@ We also provide a small code example for driving the code using a python driver.
 
 # HARDWARE
 
-Below we describe how the XY Stage can be build and assembled in order to replicate the whole system as shown in the rendering above one needs additional parts that can be found in the original [openUC2 repository](https://github.com/bionanoimaging/UC2-GIT).
+Below we describe how the XY Stage can be build and assembled in order to replicate the whole system as shown in the rendering above. One needs additional parts that can be found in the original [openUC2 repository](https://github.com/bionanoimaging/UC2-GIT).
 
 
 ## Bill of material
@@ -101,7 +101,7 @@ Below you will find all components necessary to build this device
 
 ### 3D printing files
 
-All these files need be printed. We used a Prusa i3 MK3 using PLA Prusmant (Galaxy Black) at layer height 0.3 mm and infill 80%.
+All these files need to be printed. We used a Prusa i3 MK3 using PLA Prusament (Galaxy Black) at layer height 0.3 mm and infill 80%.
 
 
 |  Type | Details  |  Price | Link  |
@@ -128,7 +128,7 @@ The `XY60-C` costs between 40-50€ and compares to a `Thorlabs LX20`stage (820�
 It is available from this [Aliexpress shop](https://de.aliexpress.com/item/4000801621380.html?spm=a2g0o.productlist.0.0.303b301dvo4AzM&algo_pvid=ca5e3889-75d2-4a53-97d2-df5810ccfbcc&algo_expid=ca5e3889-75d2-4a53-97d2-df5810ccfbcc-2&btsid=2100bb4716119012253526554e7664&ws_ab_test=searchweb0_0,searchweb201602_,searchweb201603). Search for "XY Axis 60*60mm Trimming Station Manual Displacement Platform Linear Stage Sliding Table XY60-C XY60-R,XY60-LM LY60 Cross Rail"
 
 
-From the website the following information are available:
+From the website the following information is available:
 
 ***Feature:***
 
@@ -140,10 +140,10 @@ From the website the following information are available:
 ***Parameter:***
 ```
 1. Direction of movement: X Y axis direction
-2. Body material: Aluminum
+2. Body material: Aluminium
 3. Drive: differential head
 4. The table size: 60x60mm
-5. table thickness: 36mm/30mm
+5. Table thickness: 36mm/30mm
 6. Stroke: ± 6.5mm（Customizable ±12.5,if you need,contact us）
 7. Load: 49N (5kgf)
 8. Minimum scale: 0.01mm
@@ -175,7 +175,7 @@ This is used in the current version of the setup
 <a> <img src="./IMAGES/MicronStage_9.jpg" width="300"></a>
 </p>
 
-***2.*** *Start by removing the micrometer with the screws for one axis*
+***2.*** *Start by removing the micrometre with the screws for one axis*
 
 <p align="center">
 <a> <img src="./IMAGES/MicronStage_10.jpg" width="300"></a>
@@ -193,7 +193,7 @@ This is used in the current version of the setup
 <a> <img src="./IMAGES/MicronStage_12.jpg" width="300"></a>
 </p>
 
-***5.*** *Add the motor motor adapter*
+***5.*** *Add the motor to the adapter*
 
 <p align="center">
 <a> <img src="./IMAGES/MicronStage_13.jpg" width="300"></a>
@@ -235,10 +235,11 @@ This is used in the current version of the setup
 <a> <img src="./IMAGES/MicronStage_16.jpg" width="300"></a>
 </p>
 
-***9. (optional)*** *Add the baseplate to the XY-stage - but don't forget to also screw the UC2 puzzle-piece baseplates to the baseplate*
+***9. (optional)*** *Add the printed baseplate to the XY-stage - then screw the UC2 puzzle-piece baseplates to the printed baseplate of the XY-stage*
 
 <p align="center">
 <a> <img src="./IMAGES/MicronStage_1.jpg" width="300"></a>
+<a> <img src="./IMAGES/MicronStage_17.jpg" width="300"></a>
 </p>
 
 
@@ -252,20 +253,20 @@ Some results will show up here soon.
 <a> <img src="./IMAGES/Stageaction.gif" width="300"></a>
 </p>
 
-***Fig 1.*** *Some fluorescent cells (HeLa) moved in XY/Z This is actually a very bad example ;-)*
+***Fig 1.*** *Fluorescent cells (HeLa) moved in XY/Z This is actually a very bad example ;-)*
 
 
 <p align="center">
 <a> <img src="./IMAGES/20210305-150521_PTYCHO_UC2-Texp-2.5_gain-0.gif" width="300"></a>
 </p>
 
-***Fig 2.*** *Some Ptychography measurements of a USAF chart scanned through a beam*
+***Fig 2.*** *Ptychography measurements of a USAF chart scanned through a beam*
 
 
 
 ## Get Involved
 
-This project is open so that anyone can get involved. You don't even have to learn CAD designing or programming. Find ways you can contribute in  [CONTRIBUTING](CONTRIBUTING.md)
+This project is open so that anyone can get involved. You don't even have to learn CAD designing or programming. Find ways you can contribute in  [CONTRIBUTING](https://github.com/openUC2/UC2-GIT/blob/master/CONTRIBUTING.md)
 
 
 ## License and Collaboration
@@ -275,7 +276,7 @@ We encourage everyone who is using our Toolbox to share their results and ideas,
 
 You're free to fork the project and enhance it. If you have any suggestions to improve it or add any additional functions make a pull-request or file an issue.
 
-Please find the type of licenses [here](./License.md)
+Please find the type of licenses [here](https://github.com/openUC2/UC2-GIT/blob/master/License.md)
 
 REMARK: All files have been designed using Autodesk Inventor 2019 (EDUCATION)
 
